@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'custom_colors.dart';
 import 'custom_size.dart';
 
 Widget textXXL(String? title, Color color, FontWeight fontWeight,
@@ -135,4 +136,18 @@ Widget textXXXS(String? title, Color color, FontWeight fontWeight,
         fontWeight: fontWeight,
       ),
       textAlign: textAlign);
+}
+
+
+BoxDecoration dialogBgDeco() {
+  return const BoxDecoration(
+      borderRadius: BorderRadius.all(Radius.circular(30)), color: Colors.white);
+}
+
+
+BoxDecoration inputRoundBox() {
+  return BoxDecoration(
+    borderRadius: BorderRadius.all(Radius.circular(60)),
+    border: Border.all(color: lineColor),
+  );
 }

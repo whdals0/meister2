@@ -14,3 +14,11 @@ Color text2Color = Color(0xFF444444);
 Color text3Color = Color(0xFF666666);
 Color text4Color = Color(0xFF888888);
 Color text5Color = Color(0xFFA4A4A4);
+
+// 배경 회색
+Color bgMainGray = Color(0xFFf6f6f6);
+
+// 기본 색상 팔레트
+Color mainGray = Color(0xFFF2F3F5);
+Color mainColor = Color(0xFFEFAF13);
+Color lineColor = Color(0xFFE9EBED);

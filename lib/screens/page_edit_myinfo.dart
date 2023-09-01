@@ -10,6 +10,11 @@ class PageEditMyInfo extends StatefulWidget {
 class _PageEditMyInfoState extends State<PageEditMyInfo> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: null,
+      body: Container(
+        color: Colors.white,
+      ),
+    );
   }
 }

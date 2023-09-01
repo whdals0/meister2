@@ -13,6 +13,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   custom_navigation_bar: ^0.8.2
   get: ^4.6.5
+  flutter_svg: ^2.0.5
 
 dev_dependencies:
   flutter_test:

@@ -10,6 +10,11 @@ class TabPost extends StatefulWidget {
 class _TabPostState extends State<TabPost> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: null,
+      body: Container(
+        color: Colors.white,
+      ),
+    );
   }
 }

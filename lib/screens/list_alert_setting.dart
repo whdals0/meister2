@@ -10,6 +10,11 @@ class ListAlertSetting extends StatefulWidget {
 class _ListAlertSettingState extends State<ListAlertSetting> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: null,
+      body: Container(
+        color: Colors.white,
+      ),
+    );
   }
 }
