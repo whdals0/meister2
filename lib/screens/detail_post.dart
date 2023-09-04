@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class TabPost extends StatefulWidget {
-  const TabPost({Key? key}) : super(key: key);
+class DetailPost extends StatefulWidget {
+  const DetailPost({Key? key}) : super(key: key);
 
   @override
-  State<TabPost> createState() => _TabPostState();
+  State<DetailPost> createState() => _DetailPostState();
 }
 
-class _TabPostState extends State<TabPost> {
+class _DetailPostState extends State<DetailPost> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

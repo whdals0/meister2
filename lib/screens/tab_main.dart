@@ -1,8 +1,13 @@
 import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:meister2/screens/tab_alert.dart';
-import 'package:meister2/screens/tab_mypage.dart';
-import 'package:meister2/screens/tab_post.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:meister2/globals/custom_colors.dart';
+import 'package:meister2/screens/reg_post.dart';
+
+import 'tab_alert.dart';
+import 'tab_mypage.dart';
+import 'tab_post.dart';
 
 class TabMain extends StatefulWidget {
   const TabMain({Key? key}) : super(key: key);
@@ -12,7 +17,6 @@ class TabMain extends StatefulWidget {
 }
 
 class _TabMainState extends State<TabMain> {
-
   var currentIdx = 0; // 탭 페이지 체크용 index
 
   // currentIdx 에 따라서 보여줄 Tab 페이지
@@ -31,27 +35,62 @@ class _TabMainState extends State<TabMain> {
       ),
       bottomNavigationBar: CustomNavigationBar(
         scaleFactor: 0.3,
-        iconSize: 30,
         strokeColor: Colors.white,
         backgroundColor: Colors.white,
         items: [
           // 각 하단별 탭 아이콘, 타이틀 구성
           CustomNavigationBarItem(
-            icon: Icon(Icons.list_alt),
+            selectedIcon: Image.asset(
+              "assets/icons/tab1_on.png",
+              height: 24,
+            ),
+            icon: Image.asset(
+              "assets/icons/tab1_off.png",
+              height: 24,
+            ),
             title: Text(
               "Community",
+              style: TextStyle(color: Colors.grey[500]),
+            ),
+            selectedTitle: Text(
+              "Community",
+              style: TextStyle(color: mainColor),
             ),
           ),
           CustomNavigationBarItem(
-            icon: Icon(Icons.notifications),
+            selectedIcon: Image.asset(
+              "assets/icons/tab2_on.png",
+              height: 24,
+            ),
+            icon: Image.asset(
+              "assets/icons/tab2_off.png",
+              height: 24,
+            ),
             title: Text(
               "Alert",
+              style: TextStyle(color: Colors.grey[500]),
+            ),
+            selectedTitle: Text(
+              "Alert",
+              style: TextStyle(color: mainColor),
             ),
           ),
           CustomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
+            selectedIcon: Image.asset(
+              "assets/icons/tab3_on.png",
+              height: 24,
+            ),
+            icon: Image.asset(
+              "assets/icons/tab3_off.png",
+              height: 24,
+            ),
             title: Text(
               "MyPage",
+              style: TextStyle(color: Colors.grey[500]),
+            ),
+            selectedTitle: Text(
+              "MyPage",
+              style: TextStyle(color: mainColor),
             ),
           ),
         ],
@@ -59,11 +98,26 @@ class _TabMainState extends State<TabMain> {
         onTap: (index) {
           // 탭 클릭 시 페이지 전환해주는 부분
           currentIdx = index;
-          setState(() {
-
-          });
+          setState(() {});
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(30.0),
+          ),
+        ),
+        backgroundColor: mainColor,
+        onPressed: _moveRegPost,
+        child: Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+      ),
     );
+  }
+
+  void _moveRegPost() {
+    Get.to(RegPost());
   }
 }

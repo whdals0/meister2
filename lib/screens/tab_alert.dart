@@ -10,6 +10,11 @@ class TabAlert extends StatefulWidget {
 class _TabAlertState extends State<TabAlert> {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('TabAlert'));
+    return Scaffold(
+      appBar: null,
+      body: Container(
+        color: Colors.white,
+      ),
+    );
   }
 }
