@@ -59,7 +59,9 @@ class _PageLoginState extends State<PageLogin> {
   }
 
   _login(){
-    getUserInfo("abcd1234");
+    // getUser
+    // Info("abcd1234");
+    Get.to(TabMain());
   }
 
   // 커스텀 함수 생성

@@ -14,6 +14,7 @@ dependencies:
   custom_navigation_bar: ^0.8.2
   get: ^4.6.5
   flutter_svg: ^2.0.5
+  infinite_scroll_pagination: ^3.2.0
 
 dev_dependencies:
   flutter_test:

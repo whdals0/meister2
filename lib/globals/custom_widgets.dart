@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'custom_colors.dart';
 import 'custom_size.dart';
 
@@ -149,5 +150,43 @@ BoxDecoration inputRoundBox() {
   return BoxDecoration(
     borderRadius: BorderRadius.all(Radius.circular(60)),
     border: Border.all(color: lineColor),
+  );
+}
+
+
+Widget loadUserProfile(String? filepath, double imgSize) {
+  if (filepath == null || filepath == '') {
+    return Image.asset(
+      "assets/icons/tab3_off.png",
+      width: imgSize,
+      height: imgSize,
+      fit: BoxFit.contain,
+    );
+  } else {
+    return CircleAvatar(
+      radius: imgSize / 2, // 동그라미 크기 조정
+      backgroundColor: Colors.transparent, // 배경색 설정 (투명으로)
+      child: ClipOval(
+        child: Image.network(
+          filepath!, // 이미지 URL
+          fit: BoxFit.cover, // 이미지를 꽉 차게 표시
+          height: imgSize, width: imgSize,
+        ),
+      ),
+    );
+  }
+}
+
+
+Widget contentLabelMax2Line(String? txt) {
+  if (txt == null || txt == '') {
+    txt = "";
+  }
+
+  return Text(
+    txt,
+    maxLines: 2,
+    overflow: TextOverflow.ellipsis,
+    style: TextStyle(color: text3Color, fontSize: fontSizeS),
   );
 }
