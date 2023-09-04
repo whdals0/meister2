@@ -6,7 +6,6 @@ class UserProvider extends GetConnect{
   void onInit(){
     // 초기 데이터 설정용
     // 서버 URL 이나 대기시간 등
-
   }
 
   // Get 호출

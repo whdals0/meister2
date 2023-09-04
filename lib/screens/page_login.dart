@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:meister2/dialogs/dialog_find_pw.dart';
+import 'package:meister2/providers/user_provider.dart';
 import 'package:meister2/screens/page_join.dart';
 
+import '../models/user.dart';
 import 'tab_main.dart';
 
 class PageLogin extends StatefulWidget {
@@ -56,7 +58,28 @@ class _PageLoginState extends State<PageLogin> {
     );
   }
 
-  void _login() {
-    Get.to(TabMain());
+  _login(){
+    getUserInfo("abcd1234");
   }
+
+  // 커스텀 함수 생성
+  Future<void> getUserInfo(String user_id) async {
+    // Provider 생성
+    UserProvider userProvider = UserProvider();
+    // 서버에서 데이터를 받아오기를 기다렸다가 데이터가 넘어오면 response 아래 구문 수행
+    final response = await userProvider.getUserInfo(user_id);
+    if(response != null){
+      // statusCode 가 200 이면 -> 정상적으로 결과값을 수신했으면
+      if(response.statusCode == 200){
+        // 결과값 을 가지고 후 처리
+        print("response = ${response.body}");
+
+        User user = User.fromJson(response.body);
+
+        print("user : user_id = ${user.user_id}");
+        print("user : nickname = ${user.nickname}");
+      }
+    }
+  }
+
 }
