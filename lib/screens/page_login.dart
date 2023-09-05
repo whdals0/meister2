@@ -128,7 +128,9 @@ class _PageLoginState extends State<PageLogin> {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Get.to(() => TabMain());
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xffEFAF13),
                             foregroundColor: Colors.white,
