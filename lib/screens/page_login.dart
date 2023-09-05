@@ -28,33 +28,210 @@ class _PageLoginState extends State<PageLogin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: null,
-      body: Container(
-        width: Get.width,
-        height: Get.height,
-        color: Colors.white,
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextButton(
-              onPressed: _moveJoin,
-              child: Text('회원가입'),
-            ),
-            TextButton(
-              onPressed: _findPw,
-              child: Text('비밀번호 찾기'),
-            ),
-            TextButton(
-              onPressed: _login,
-              child: Text('로그인'),
-            ),
-            TextButton(
-              onPressed: _googleSignin,
-              child: Text('구글 로그인'),
-            ),
-            TextButton(
-              onPressed: _googleSignout,
-              child: Text('구글 로그아웃'),
+            Container(
+              padding: EdgeInsets.only(top: 82, left: 54, right: 54),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    "assets/icons/logo_1.png",
+                    width: 190,
+                    height: 198,
+                    fit: BoxFit.cover,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(right: 5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.0),
+                      border: Border.all(color: Colors.black12),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            maxLines: 1,
+                            keyboardType: TextInputType.emailAddress,
+                            enabled: true,
+                            style: TextStyle(fontSize: 14, color: Colors.black87),
+                            onChanged: (value) {},
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "아이디",
+                              hintStyle: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black45,
+                              ),
+                              contentPadding: EdgeInsets.only(left: 30),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none),
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  Container(
+                    padding: EdgeInsets.only(right: 5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30.0),
+                      border: Border.all(color: Colors.black12),
+                    ),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            maxLines: 1,
+                            keyboardType: TextInputType.emailAddress,
+                            enabled: true,
+                            style: TextStyle(fontSize: 14, color: Colors.black87),
+                            onChanged: (value) {},
+                            decoration: InputDecoration(
+                              border: InputBorder.none,
+                              hintText: "비밀번호",
+                              hintStyle: TextStyle(
+                                fontSize: 14,
+                                color: Colors.black45,
+                              ),
+                              contentPadding: EdgeInsets.only(left: 30),
+                              focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide.none),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  ListTile(
+                    onTap: () {},
+                    contentPadding: EdgeInsets.symmetric(horizontal: 16.0), // 컨텐츠 패딩을 설정
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.end, // title을 오른쪽으로 정렬
+                      children: [
+                        Icon(
+                          Icons.check_circle_rounded,
+                          color: Colors.amber,
+                        ),
+                        Text("자동 로그인", style: TextStyle(fontSize: 14.0)),
+                        SizedBox(width: 8.0), // 아이콘과 텍스트 사이 간격
+                      ],
+                    ),
+                  ),
+                  Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0xffEFAF13),
+                            foregroundColor: Colors.white,
+                            textStyle: TextStyle(
+                              fontSize: 15.0,
+                            ),
+                            fixedSize: Size(285.0, 46.0),
+                          ),
+                          child: Container(
+                            // Container로 감싸서 가운데 정렬
+                            alignment: Alignment.center,
+                            child: Text(
+                              '로그인',
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                        ),
+                        Container(
+                            child: Row (
+                              children: [
+                                TextButton(
+                                  style: TextButton.styleFrom(
+                                    textStyle: const TextStyle(fontSize: 14),
+                                  ).copyWith(
+                                    foregroundColor: MaterialStateColor.resolveWith(
+                                          (Set<MaterialState> states) {
+                                        return const Color(0xffEFAF13); // 원하는 색상으로 변경
+                                      },
+                                    ),
+                                  ),
+                                  onPressed: (){
+                                    Get.to(() =>PageJoin());
+                                  },
+                                  child: const Text('회원가입'),
+                                ),
+                                SizedBox(width: 100),
+                                TextButton(
+                                  style: TextButton.styleFrom(
+                                    textStyle: const TextStyle(fontSize: 14),
+                                    foregroundColor: const Color(0xffEFAF13),
+                                  ),
+                                  onPressed: null,
+                                  child: const Text('비밀번호 찾기'),
+                                ),
+                              ],
+                            )
+                        ),
+                        SizedBox(height: 100),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            foregroundColor: Colors.black,
+                            textStyle: TextStyle(
+                              fontSize: 15.0,
+                            ),
+                            fixedSize: Size(285.0, 46.0),
+                          ),
+                          child: Container(
+                            // Container로 감싸서 가운데 정렬
+                            alignment: Alignment.centerLeft,
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  "assets/icons/google.png",
+                                  width: 20,
+                                  height: 20,
+                                ),
+                                SizedBox(width: 70), // 아이콘과 텍스트 사이의 간격 조절
+                                Text('구글로그인'),
+                              ],
+                            ),
+                          ),
+                        ),
+                        ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              foregroundColor: Colors.black,
+                              textStyle: TextStyle(
+                                fontSize: 15.0,
+                              ),
+                              fixedSize: Size(285.0, 46.0)),
+                          child: Container(
+                            alignment: Alignment.centerLeft,
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  "assets/icons/apple.png",
+                                  width: 20,
+                                  height: 20,
+                                ),
+                                SizedBox(width: 70), // 아이콘과 텍스트 사이의 간격 조절
+                                Text('애플로그인'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ],
         ),

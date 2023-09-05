@@ -22,10 +22,14 @@ class _PageSplashState extends State<PageSplash> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: null,
-      body: Center(
-        child: textXXL('스플래쉬 이미지로 대체', text1Color, FontWeight.bold)
+    return Container(
+      color: const Color(0xffEFAF13),
+      child: Center(
+        child: Image.asset(
+          "assets/icons/logo_white_1.png",
+          width: 150,
+          height: 150,
+        ),
       ),
     );
   }
