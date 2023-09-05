@@ -156,11 +156,12 @@ BoxDecoration inputRoundBox() {
 
 Widget loadUserProfile(String? filepath, double imgSize) {
   if (filepath == null || filepath == '') {
-    return Image.asset(
-      "assets/icons/tab3_off.png",
+    return SvgPicture.asset(
+      "assets/icons/default_profile.svg",
       width: imgSize,
       height: imgSize,
       fit: BoxFit.contain,
+      color: Colors.grey,
     );
   } else {
     return CircleAvatar(

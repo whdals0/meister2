@@ -4,22 +4,23 @@ part 'user_alert.g.dart';
 
 @JsonSerializable()
 class UserAlert {
-  int id;
-  String user_id;
-  int notice_yn = 1;
-  int comm_yn = 1;
-  String created_at;
-  String updated_at;
+  int? id;
+  String? user_id;
+  int? notice_yn = 1;
+  int? comm_yn = 1;
+  String? created_at;
+  String? updated_at;
 
   UserAlert(
-      {required this.id,
-        required this.user_id,
-        required this.notice_yn,
-        required this.comm_yn,
-        required this.created_at,
-        required this.updated_at});
+      { this.id,
+        this.user_id,
+        this.notice_yn,
+        this.comm_yn,
+        this.created_at,
+        this.updated_at});
 
   factory UserAlert.fromJson(Map<String, dynamic> json) => _$UserAlertFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserAlertToJson(this);
+  Map<String, dynamic> toEdit() => _$UserAlertToEdit(this);
 }

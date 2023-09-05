@@ -7,13 +7,13 @@ part of 'init_passwd.dart';
 // **************************************************************************
 
 InitPasswd _$InitPasswdFromJson(Map<String, dynamic> json) => InitPasswd(
-      id: json['id'] as int,
-      email: json['email'] as String,
+      id: json['id'] as int?,
+      email: json['email'] as String?,
       init_token: json['init_token'] as String?,
-      enabled: json['enabled'] as int,
+      enabled: json['enabled'] as int?,
       init_at: json['init_at'] as String?,
-      created_at: json['created_at'] as String,
-      updated_at: json['updated_at'] as String,
+      created_at: json['created_at'] as String?,
+      updated_at: json['updated_at'] as String?,
     );
 
 Map<String, dynamic> _$InitPasswdToJson(InitPasswd instance) =>

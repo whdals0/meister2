@@ -7,23 +7,23 @@ part of 'post.dart';
 // **************************************************************************
 
 Post _$PostFromJson(Map<String, dynamic> json) => Post(
-      id: json['id'] as int,
-      user_id: json['user_id'] as String,
+      id: json['id'] as int?,
+      user_id: json['user_id'] as String?,
       user_filepath: json['user_filepath'] as String?,
       user_nickname: json['user_nickname'] as String?,
-      content: json['content'] as String,
+      content: json['content'] as String?,
       top_category: json['top_category'] as String?,
       filetype: json['filetype'] as String?,
       filepath: json['filepath'] as String?,
-      blocked: json['blocked'] as int,
+      blocked: json['blocked'] as int?,
       blocked_at: json['blocked_at'] as String?,
       view_cnt: json['view_cnt'] as int?,
       cmt_cnt: json['cmt_cnt'] as int?,
       like_cnt: json['like_cnt'] as int?,
       like_it: json['like_it'] as int?,
       like_id: json['like_id'] as int?,
-      created_at: json['created_at'] as String,
-      updated_at: json['updated_at'] as String,
+      created_at: json['created_at'] as String?,
+      updated_at: json['updated_at'] as String?,
     );
 
 Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{

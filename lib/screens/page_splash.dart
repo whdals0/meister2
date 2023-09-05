@@ -25,7 +25,7 @@ class _PageSplashState extends State<PageSplash> {
     return Scaffold(
       appBar: null,
       body: Center(
-        child: textXXL('22 사이즈의 검정색 굵은 글자', text1Color, FontWeight.bold)
+        child: textXXL('스플래쉬 이미지로 대체', text1Color, FontWeight.bold)
       ),
     );
   }

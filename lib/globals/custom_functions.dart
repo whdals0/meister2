@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../dialogs/dialog_image.dart';
+
 // 이메일 유효성 검사 함수
 bool validateEmail(String email) {
   // 정규식 패턴을 사용하여 이메일 유효성 검사
@@ -70,4 +72,53 @@ void showSnackBar(String msg_title, String msg_body) {
       margin: EdgeInsets.all(8.0),
       borderRadius: 16.0,
       barBlur: 4.0);
+}
+
+// BottomSheet 불러오기
+void btmSheet(Widget content, context, double padding) {
+  showModalBottomSheet(
+    backgroundColor: Colors.transparent,
+    context: context,
+    builder: (BuildContext context) {
+      return Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(16),
+            topRight: Radius.circular(16),
+          ),
+        ),
+        padding: EdgeInsets.all(padding),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            content,
+          ],
+        ),
+      );
+    },
+  );
+}
+
+String daySplitShort(String date) {
+  // print("date ${date}");
+  if (date == null || date == "") {
+    return "";
+  }
+  String return_day = date.substring(2, 4) +
+      "-" +
+      date.substring(5, 7) +
+      "-" +
+      date.substring(8, 10);
+  return return_day;
+}
+
+// 이미지 보여주기 팝업
+void ShowImage(String filepath) {
+  showDialog(
+    context: Get.context!,
+    builder: (BuildContext context) {
+      return DialogImage(imgpath: filepath.trim());
+    },
+  );
 }

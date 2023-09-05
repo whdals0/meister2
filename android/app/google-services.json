@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "240126988438",
+    "project_id": "meister-fcm",
+    "storage_bucket": "meister-fcm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240126988438:android:ed2920eb75ea1bc453f2b7",
+        "android_client_info": {
+          "package_name": "com.example.meister2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240126988438-oc0e0v47cvv1c4ogn1rsqpvvvfuk67ku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCjN4aUEvawzQCxj2q5nNeXbR40rE-YrQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240126988438-oc0e0v47cvv1c4ogn1rsqpvvvfuk67ku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

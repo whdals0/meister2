@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class DetailDelete extends StatefulWidget {
-  const DetailDelete({Key? key}) : super(key: key);
+class DialogDelete extends StatefulWidget {
+  const DialogDelete({Key? key}) : super(key: key);
 
   @override
-  State<DetailDelete> createState() => _DetailDeleteState();
+  State<DialogDelete> createState() => _DialogDeleteState();
 }
 
-class _DetailDeleteState extends State<DetailDelete> {
+class _DialogDeleteState extends State<DialogDelete> {
   @override
   Widget build(BuildContext context) {
     return const Placeholder();

@@ -101,7 +101,7 @@ class _TabMainState extends State<TabMain> {
           setState(() {});
         },
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: currentIdx == 0 ? FloatingActionButton(
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(30.0),
@@ -113,7 +113,7 @@ class _TabMainState extends State<TabMain> {
           Icons.add,
           color: Colors.white,
         ),
-      ),
+      ) : null,
     );
   }
 

@@ -4,22 +4,22 @@ part 'init_passwd.g.dart';
 
 @JsonSerializable()
 class InitPasswd {
-  int id;
-  String email;
+  int? id;
+  String? email;
   String? init_token;
-  int enabled = 1;
+  int? enabled = 1;
   String? init_at = "";
-  String created_at;
-  String updated_at;
+  String? created_at;
+  String? updated_at;
 
   InitPasswd(
-      {required this.id,
-      required this.email,
+      {this.id,
+      this.email,
       this.init_token,
-      required this.enabled,
+      this.enabled,
       this.init_at,
-      required this.created_at,
-      required this.updated_at});
+      this.created_at,
+      this.updated_at});
 
   factory InitPasswd.fromJson(Map<String, dynamic> json) =>
       _$InitPasswdFromJson(json);
