@@ -45,3 +45,12 @@ Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
       'created_at': instance.created_at,
       'updated_at': instance.updated_at,
     };
+
+
+Map<String, dynamic> _$PostToReg(Post instance) => <String, dynamic>{
+      'user_id': instance.user_id,
+      'content': instance.content,
+      'top_category': instance.top_category,
+      'filepath': instance.filepath,
+      'blocked': instance.blocked,
+};

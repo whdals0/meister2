@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:meister2/globals/custom_colors.dart';
+import 'package:meister2/globals/globals.dart';
 import 'package:meister2/screens/reg_post.dart';
 
 import 'tab_alert.dart';
@@ -21,7 +22,9 @@ class _TabMainState extends State<TabMain> {
 
   // currentIdx 에 따라서 보여줄 Tab 페이지
   final List<Widget> _widgetOptions = <Widget>[
-    TabPost(),
+    TabPost(
+      key: tabPostKey,
+    ),
     TabAlert(),
     TabMyPage(),
   ];
@@ -117,7 +120,7 @@ class _TabMainState extends State<TabMain> {
     );
   }
 
-  void _moveRegPost() {
+  Future<void> _moveRegPost() async {
     Get.to(RegPost());
   }
 }

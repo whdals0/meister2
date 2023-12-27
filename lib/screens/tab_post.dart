@@ -16,10 +16,10 @@ class TabPost extends StatefulWidget {
   const TabPost({Key? key}) : super(key: key);
 
   @override
-  State<TabPost> createState() => _TabPostState();
+  State<TabPost> createState() => TabPostState();
 }
 
-class _TabPostState extends State<TabPost> {
+class TabPostState extends State<TabPost> {
   late int currentPage;
 
   final PagingController<int, Post> _pagingController =

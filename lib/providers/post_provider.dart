@@ -9,6 +9,19 @@ class PostProvider extends GetConnect{
     // 서버 URL 이나 대기시간 등
   }
 
+
+  // 해당 테이블 데이터 삽입
+  Future<Response> insertContent(Map data) async {
+    final server_api = "$server_url/posts";
+
+    print("server_api = ${server_api}");
+    print("server_api data = ${data.toString()}");
+    final response = await post(server_api, data);
+
+    return response;
+  }
+
+
   // Get 호출
   Future<Response> getPosts(String user_id) async {
     // Backend 로 요청할 URL 을 그대로 적어준다.

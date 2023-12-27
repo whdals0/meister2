@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:meister2/globals/globals.dart';
+import 'package:meister2/providers/post_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../globals/custom_colors.dart';
 import '../globals/custom_functions.dart';
 import '../globals/custom_widgets.dart';
+import '../models/post.dart';
 
 class RegPost extends StatefulWidget {
   const RegPost({Key? key}) : super(key: key);
@@ -57,6 +60,7 @@ class _RegPostState extends State<RegPost> {
             child: SizedBox(
               height: 175,
               child: TextField(
+                controller: _textEditingController,
                 maxLines: null,
                 decoration: InputDecoration(
                   hintText: '내용을 입력해주세요.',
@@ -148,8 +152,25 @@ class _RegPostState extends State<RegPost> {
                   Container(
                     width: 330, // 버튼의 폭을 조절합니다.
                     child: ElevatedButton(
-                      onPressed: () {
+                      onPressed: () async {
                         // 등록하기 버튼이 눌렸을 때의 동작 추가
+                        if(checkValid()){
+                          Post post = Post();
+                          post.user_id = "Pv33SNy9QG"; // 아직 정식 UserID 가 없기 때문에 서버에 있는 계정 1개 강제 삽입
+                          post.content = _textEditingController.text.trim();
+                          post.top_category = "BOARD-01"; // 게시판의 카테고리 가 와야 하는데, 임의로 BOARD-01 로 지정
+                          post.blocked = 0;
+
+                          final response = await PostProvider().insertContent(post.toReg());
+                          if(response.statusCode == 201){
+                            Get.back(result:'reload');
+                            showSnackBar("등록 완료", "등록이 완료되었습니다");
+
+                            if(tabPostKey.currentState != null){
+                              tabPostKey.currentState!.reloadPage();
+                            }
+                          }
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.grey[300], // 회색 배경 색상
@@ -166,6 +187,15 @@ class _RegPostState extends State<RegPost> {
         ],
       ),
     );
+  }
+
+  bool checkValid(){
+    if(_textEditingController.text.trim().length == 0){
+      showSnackBar("필수값 누락", "게시물 내용을 입력하세요");
+      return false;
+    }
+
+    return true;
   }
 
   Widget ImageItem(String filepath) {

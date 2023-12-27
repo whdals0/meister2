@@ -44,4 +44,5 @@ class Post {
   factory Post.fromJson(Map<String, dynamic> json) => _$PostFromJson(json);
 
   Map<String, dynamic> toJson() => _$PostToJson(this);
+  Map<String, dynamic> toReg() => _$PostToReg(this);
 }
